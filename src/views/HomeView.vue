@@ -51,19 +51,19 @@ import { useRouter } from "vue-router";
 // import CityCardSkeleton from "../components/CityCardSkeleton.vue";
 // import CityList from "../components/CityList.vue";
 
-// const router = useRouter();
-// const previewCity = (searchResult) => {
-//   const [city, state] = searchResult.place_name.split(",");
-//   router.push({
-//     name: "cityView",
-//     params: { state: state.replaceAll(" ", ""), city: city },
-//     query: {
-//       lat: searchResult.geometry.coordinates[1],
-//       lng: searchResult.geometry.coordinates[0],
-//       preview: true,
-//     },
-//   });
-// };
+const router = useRouter();
+const previewCity = (searchResult) => {
+  const [city, state] = searchResult.place_name.split(",");
+  router.push({
+    name: "cityView",
+    params: { state: state.replaceAll(" ", ""), city: city },
+    query: {
+      lat: searchResult.geometry.coordinates[1],
+      lng: searchResult.geometry.coordinates[0],
+      preview: true,
+    },
+  });
+};
 
 const mapboxAPIKey =
   "pk.eyJ1Ijoia2FybGpwIiwiYSI6ImNtM3BscWlidjBnZTUybG42MnhkNDA1aTEifQ.Q8_viGxd43c1xza4jZS_hA";
